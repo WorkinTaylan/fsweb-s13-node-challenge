@@ -29,7 +29,7 @@ Veritabanını orijinal durumuna sıfırlamanıza izin veren bir _"resetdb"_ kom
 
 `api/projects/projects-router.js` içinde aşağıdakileri uygulayın:
 
-- [ ] `[GET] /api/projects`
+- [*] `[GET] /api/projects`
   - Yanıt gövdesinde bir projexts dizisi döndürür.
   - Proje yoksa boş bir dizi ile yanıt verir.
 - [ ] `[GET] /api/projects/:id`
