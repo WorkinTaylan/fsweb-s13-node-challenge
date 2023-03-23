@@ -17,13 +17,13 @@
 Kodunuzla ilgili testler yapmak için kullanabileceğiniz bir _"test"_ betiği zaten var.
 Veritabanını orijinal durumuna sıfırlamanıza izin veren bir _"resetdb"_ komut dosyası mevcuttur.
 
-- [ ] API sunucusunu çalıştırmak için "node" kullanan _"start"_ adlı bir _npm betiği_ yazın.
-- [ ] API sunucusunu çalıştırmak için `nodemon` kullanan _"server"_ adlı bir _npm betiği_ yazın.
-- [ ] Üretimde kullanılmayacak bir geliştirme bağımlılığı olarak _nodemon_ yükleyin.
+- [*] API sunucusunu çalıştırmak için "node" kullanan _"start"_ adlı bir _npm betiği_ yazın.
+- [*] API sunucusunu çalıştırmak için `nodemon` kullanan _"server"_ adlı bir _npm betiği_ yazın.
+- [*] Üretimde kullanılmayacak bir geliştirme bağımlılığı olarak _nodemon_ yükleyin.
 
 ### Görev 2: Ortam Değişkenlerini Tüket
 
-- [ ] "process.env" değişkeninden bağlantı noktası numarasını getirin, "process.env.PORT" tanımsızsa "9000"e geri dönün **!!!**
+- [*] "process.env" değişkeninden bağlantı noktası numarasını getirin, "process.env.PORT" tanımsızsa "9000"e geri dönün **!!!**
 
 ### Görev 3: Uç Noktalar Oluşturun
 
