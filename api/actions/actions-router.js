@@ -32,8 +32,7 @@ router.post('/', validateNewAction, async(req,res,next)=>{
 router.put('/:id', validateId,validateNewAction, async(req,res,next)=>{
     const {id}=req.params
     try{
-        await actionModel.update(id,req.action)
-        const updatedAction=await actionModel.get(id)
+        let updatedAction=await actionModel.update(id,req.action)
         res.json(updatedAction)
         next();
     }catch(error){
@@ -44,7 +43,8 @@ router.put('/:id', validateId,validateNewAction, async(req,res,next)=>{
 router.delete('/:id', validateId, async(req,res,next)=>{
     const {id}=req.params
     try{
-        await actionModel.remove(id)
+        await actionModel.remove(id);
+        res.json({message:"action silme başarılı"})
         next();
     }catch(error){
         next(error);

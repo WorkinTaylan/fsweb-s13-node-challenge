@@ -17,8 +17,8 @@ async function validateId(req,res,next){
             res.status(404).json({message:"Proje bulunamadı"})
         }else{
             req.project=isProjectExist;
+            next();
         }
-        next(); 
     }catch(error){
         res.status(500).json({message:"Hatalı istek gönderdiniz"})
     }
@@ -30,7 +30,7 @@ function validateNewProject(req,res,next){
         res.status(400).json({message:"Plese check name or description area!"})
         next();
     }else{
-        req.project={name:name, description:description}
+        req.project={name:name, description:description, completed:req.body.completed}
         next();
     }
 }

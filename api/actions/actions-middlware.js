@@ -1,5 +1,6 @@
 // eylemlerle ilgili ara katman yazılımları yazın
 const actionModel=require("./actions-model");
+const projectModel=require("../projects/projects-model")
 
 async function validateId(req,res,next){
     const {id}=req.params;
@@ -16,15 +17,21 @@ async function validateId(req,res,next){
     }
 }
 
-function validateNewAction(req,res,next){
-    const {project_id, description, notes}=req.body;
-    if(!project_id || !description && description.length>128 || !notes){
+async function validateNewAction(req,res,next){
+    try {
+    let {project_id, description, notes}=req.body;
+    let isExistProject=await projectModel.get(project_id)
+    if( !isExistProject || !notes || !description || description.length>128){
         res.status(400).json({message:"Plese check all input areas!"})
         next();
     }else{
-        req.action={project_id: project_id, description:description, notes:notes}
+        req.action={project_id: project_id, description:description, notes:notes, completed:req.body.completed} //aslında completed gerekli değil fakat testten geçmesi için giriyoruz. Test/istenen uyşmazlığı var.
         next();
     }
+    }catch(error){
+        next(error);
+    }
+
 }
 
 module.exports={

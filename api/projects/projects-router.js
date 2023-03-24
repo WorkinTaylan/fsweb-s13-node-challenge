@@ -1,17 +1,16 @@
 // "project" routerını buraya yazın!
 const express = require("express");
-
+const router=express.Router();
 const ProjectModel=require("./projects-model");
 const {validateId, validateNewProject}=require("./projects-middleware");
 
-const router=express.Router();
 
 router.get('/', async(req,res)=>{
     try{
         let allProjects=await ProjectModel.get()
-        res.json(allProjects)
+        res.status(200).json(allProjects)
     }catch(error){
-        res.status(500).json({message:"Hata oluştu"})
+        next(error)
     }
 })
 
@@ -33,10 +32,8 @@ router.post('/', validateNewProject, async(req,res,next)=>{
 router.put('/:id', validateId,validateNewProject, async(req,res,next)=>{
     const {id}=req.params
     try{
-        await ProjectModel.update(id,req.project)
-        const updatedProject=await ProjectModel.get(id)
-        res.status(201).json(updatedProject)
-        next();
+        const updatedProject=await ProjectModel.update(id, req.project)
+        res.json(updatedProject);
     }catch(error){
         next(error);
     }
@@ -46,7 +43,7 @@ router.delete('/:id', validateId, async(req,res,next)=>{
     const {id}=req.params
     try{
         await ProjectModel.remove(id)
-        next();
+        res.json({message:"Silme başarılı"})
     }catch(error){
         next(error);
     }
