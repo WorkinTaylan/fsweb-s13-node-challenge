@@ -14,7 +14,7 @@ const server = express();
 server.use(express.json());
 server.use(cors());
 server.use("/api/projects", logger, projectRoutes);
-server.use("/api/actions", actionRoutes);
+server.use("/api/actions", logger,actionRoutes);
 
 server.get("/", (req, res)=>{
     res.send("DON'T WORRY HACK IT")

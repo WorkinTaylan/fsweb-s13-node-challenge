@@ -16,7 +16,7 @@ async function validateId(req,res,next){
         if(!isProjectExist){
             res.status(404).json({message:"Proje bulunamadı"})
         }else{
-            req.user=isProjectExist;
+            req.project=isProjectExist;
         }
         next(); 
     }catch(error){
@@ -24,7 +24,19 @@ async function validateId(req,res,next){
     }
 }
 
+function validateNewProject(req,res,next){
+    const {name, description}=req.body;
+    if(!name || !description){
+        res.status(400).json({message:"Plese check name or description area!"})
+        next();
+    }else{
+        req.project={name:name, description:description}
+        next();
+    }
+}
+
 module.exports={
     logger,
-    validateId
+    validateId,
+    validateNewProject,
 }

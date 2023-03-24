@@ -32,45 +32,45 @@ Veritabanını orijinal durumuna sıfırlamanıza izin veren bir _"resetdb"_ kom
 - [*] `[GET] /api/projects`
   - Yanıt gövdesinde bir projexts dizisi döndürür.
   - Proje yoksa boş bir dizi ile yanıt verir.
-- [ ] `[GET] /api/projects/:id`
+- [*] `[GET] /api/projects/:id`
   - Yanıtın gövdesi olarak belirtilen "id" ile bir proje döndürür.
   - Belirtilen id'ye sahip bir proje yoksa, 404 durum koduyla yanıt verir..
-- [ ] `[POST] /api/projects`
+- [?] `[POST] /api/projects`
   - Yanıtın gövdesi olarak yeni oluşturulan projeyi döndürür.
   - İstek gövdesinde gerekli alanlardan herhangi biri eksikse, 400 durum koduyla yanıt verir.
-- [ ] `[PUT] /api/projects/:id`
+- [?] `[PUT] /api/projects/:id`
   - Yanıtın gövdesi olarak güncellenen projeyi döndürür.
   - Belirtilen id'ye sahip bir proje yoksa, 404 durum koduyla yanıt verir.
   - İstek gövdesinde gerekli alanlardan herhangi biri eksikse, 400 durum koduyla yanıt verir.
-- [ ] `[DELETE] /api/projects/:id`
+- [*] `[DELETE] /api/projects/:id`
   - Yanıt gövdesi döndürmez.
   - Belirtilen id'ye sahip bir proje yoksa, 404 durum koduyla yanıt verir..
-- [ ] `[GET] /api/projects/:id/actions`
+- [*] `[GET] /api/projects/:id/actions`
   - Belirtilen "id" ile bir projeye ait bir dizi eylem (boş olabilir) döndürür.
   - Belirtilen id'ye sahip bir proje yoksa, 404 durum koduyla yanıt verir.
 
 `api/actions/actions-router.js` içinde  _actions_ CRUD işlemleri yapan uç noktalar oluşurun:
 
-- [ ] `[GET] /api/actions`
+- [*] `[GET] /api/actions`
   - Yanıtın gövdesi olarak bir dizi eylem (action) (veya boş bir dizi) döndürür.
-- [ ] `[GET] /api/actions/:id`
+- [*] `[GET] /api/actions/:id`
   - Yanıtın gövdesi olarak verilen "id" ile bir action döndürür.
   - Verilen 'id' ile herhangi bir eylem yoksa, 404 durum koduyla yanıt verir.
-- [ ] `[POST] /api/actions`
+- [*] `[POST] /api/actions`
   - Yeni oluşturulan eylemi yanıtın gövdesi olarak döndürür.
   - İstek gövdesinde gerekli alanlardan herhangi biri eksikse, 400 durum koduyla yanıt verir.
   - Bir eylem eklerken sağlanan "project_id"nin mevcut bir "projeye" ait olduğundan emin olun.
-- [ ] `[PUT] /api/actions/:id`
+- [?] `[PUT] /api/actions/:id`
   - Güncellenen eylemi yanıtın gövdesi olarak döndürür.
   - Verilen 'id' ile herhangi bir işlem yoksa, 404 durum koduyla yanıt verir.
   - İstek gövdesinde gerekli alanlardan herhangi biri eksikse, 400 durum koduyla yanıt verir.
-- [ ] `[DELETE] /api/actions/:id`
+- [*] `[DELETE] /api/actions/:id`
   - Yanıt gövdesi döndürmez.
   - Verilen 'id' ile herhangi bir işlem yoksa, 404 durum koduyla yanıt verir.
 
 ### Görev 4: Ara yazılım işlevleri oluşturun
 
-- [ ] Bu API için en az iki ara yazılım işlevi yazın ve bunları kodunuzun uygun yerlerinde kullanın.
+- [*] Bu API için en az iki ara yazılım işlevi yazın ve bunları kodunuzun uygun yerlerinde kullanın.
 
 ### Veritabanı Şemalarına İlişkin Bilgiler
 
